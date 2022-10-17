@@ -1,12 +1,18 @@
 import { Request, Response } from "express"
 import EmailService from "../services/EmailService"
 
+//usuários
 const users = [
-    {name: "Luis Fernando P. B. Pereira", email: "exemplo@gmail.com"}
+    {
+        name: "Luis Fernando P. B. Pereira",
+        email: "exemplo@gmail.com"
+    },
+    
 ]
 
 export default {
     async index (req: Request, res: Response){
+        //retorna a constante dos usuários em um JSON
         return res.json(users)
     },
 
@@ -23,7 +29,9 @@ export default {
                  body:"Bem-vindo"
             }
         })
-
-        return res.send()
+        return res.send(emailService)
+        //Verifique seu terminal
+        
+        
     }
 }
